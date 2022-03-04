@@ -1,0 +1,2 @@
+# WeekProjectChallenges
+Practising with JavaScript
