@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<body style="background-color: rgb(210, 30, 69);">
+
+    <h1 style="text-align: center;">THE BMI CALCULATOR</h1>
+    <br>
+    <br>
+
+    <p>
+        <h2 style="font-style: italic; text-align: center;">Here you calculate the BMI using the mass and height</h2>
+    </p>
+
+    <p id="bmi">*** Mark has a BMI that is equal to or less than John's ***</p>
+    </p>
+
+    <script>
+        // Store Mark 's and John's mass and height in variables
+
+        var mm = prompt(" Enter Mark 's mass?")
+        var mh = prompt("Enter Mark's Height? ")
+        var jm = prompt("Enter John 's mass?")
+        var jh = prompt("Enter John's height? ")
+
+
+
+        //Calculate both their BMIs using the formula(you can even implement both versions)
+        var mbmi = ((mm / mh) ** 2)
+        var jbmi = ((jm / jh) ** 2)
+
+
+
+
+        // Create a boolean variable 'markHigherBMI'containing information about whether Mark has a higher BMI than John.
+        var markHigherBMI = (mbmi > jbmi)
+
+        if (markHigherBMI) {
+            document.getElementById("bmi").innerHTML = "*** Mark has the higher BMI than John***"
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

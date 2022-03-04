@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+</head>
+
+
+<body>
+    <h1 style="text-align:center">Working with JavaScript Objects</h1>
+    <p id="bmi"></p>
+
+    <script>
+        //An object with properties for the full name, mass, and height of Mark Miller and John Smith
+
+        const person1 = {
+            fullname: "Mark Miller",
+            mass: 78,
+            height: 1.69
+        };
+
+        const person2 = {
+            fullname: "John Smith",
+            mass: 92,
+            height: 1.95
+        };
+
+        /*2. Create a 'calcBMI 'method on each object to calculate the BMI(the same method on both objects).Store the BMI value to a property, and also return it from the method.*/
+
+        person1.calcBMI = function() {
+            return ((this.mass / this.height) ** 2);
+        };
+
+        person2.calcBMI = function() {
+            return ((this.mass / this.height) ** 2);
+        };
+
+        //3. Log to the console who has the higher BMI, together with the full name and the respective BMI
+        markHigherBMI = person1.calcBMI() > person2.calcBMI();
+
+        if markHigherBMI {
+            console.log(person1.fullname + person1.calcBMI() + "is higher than " + person2.fullname + person2.calcBMI())
+        };
+    </script>
+
+</body>
+
+</html>

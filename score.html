@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<body style="background-color: chocolate;">
+
+    <h1 style="text-align: center;">GYMNASTIC SCORING APPLICATION</h1>
+    <br>
+    <br>
+
+    <p>
+        <h2 style="font-style: italic;">Enter the scores of the Dolphin's and Koala's here:</h2>
+    </p>
+
+    <p id="davg"></p>
+    <p id="kavg"></p>
+    <p id="dkresult"></p>
+
+    <script>
+        //Get the Dolphin's score
+        var dscore1 = prompt("Dolphin's Score #1")
+        var dscore2 = prompt("Dolphin's Score #2")
+        var dscore3 = prompt("Dolphin's Score #3")
+
+        //Store Dolphin's average score 
+        let x = calcAverage(dscore1, dscore2, dscore3);
+        document.getElementById("davg").innerHTML = "The average score for the Dolphin team is: " +
+            x;
+
+        //Get the Koala's score
+        var kscore1 = prompt("Koala's Score #1")
+        var kscore2 = prompt("Koala's Score #2")
+        var kscore3 = prompt("koala's Score #3")
+
+        //Store the Koala's average score
+        let y = calcAverage(kscore1, kscore2, kscore3)
+        document.getElementById("kavg").innerHTML = "The average score for the Koala team is: " +
+            y;
+
+        //Function calcAverage will generate the average for the teams
+        function calcAverage(score1, score2, score3) {
+            const z = ((parseInt(score1) + parseInt(score2) + parseInt(score3)) / 3);
+            return z
+        }
+
+        //Determine the winner
+        let xy = checkWinner(x, y)
+        document.getElementById("dkresult").innerHTML = xy;
+
+
+        //Function checkWinner will indicate the winner
+        function checkWinner(a1, a2) {
+            if (a1 > (2 * a2)) {
+                result = "The winner is DOLPHIN";
+            } else if (a2 > (2 * a1)) {
+                result = "The winner is KOALA";
+            }
+            return result
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>
