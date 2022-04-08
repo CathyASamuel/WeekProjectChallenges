@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TipCalculator</title>
+</head>
+<body>
+    <h2 style="text-align: center; text-decoration: underline;">TIP CALCULATOR</h2>
+
+    <p style = "font: message-box;">Calculate your Tip:</p>
+    <p style = "font-style: italic;"> Tip = 15% for bill value  between $50.00 and $300.00</p>
+    <p style = "font-style: italic;"> Tip = 20% for other amounts </p>   
+
+    <p id="tip1" style="font-style: italic;">hi</p>
+    <p id="tip2"></p>
+    <p id="total"></p>
+    <script>
+        // A function 'calcTip' that takes any bill value as an input and returns the corresponding tip
+        function calcTip(bill) {
+            if ((bill > 50) && (bill < 300)) {
+                tip = bill * .15;
+            } else  {
+                tip = bill * .20;
+            }
+        return (tip);
+        }
+     document.getElementById("tip1").innerHTML = "Your Tip is: $" + calcTip(100);
+
+    //An array 'bills' containing the test data 125, 555, 44.
+    const bills = ["125", "555", "44"];
+
+    //An array 'tips' containing the tip value for each bill
+     const tips = [calcTip(125) , calcTip(555), calcTip(44)]
+     document.getElementById("tip2").innerHTML =  "Tips: " + tips;
+    
+     //An array 'total' containing the total value
+    const total = [125 + calcTip(125), 555 + calcTip(555), 44 + calcTip(44)]
+    document.getElementById("total").innerHTML = "Bills and Tips: " + total;
+
+    </script>       
+</body>
+</html>
